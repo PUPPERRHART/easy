@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Galaxy Bux - Robux, gamepasses, frutas, contas e itens para Roblox.">
+  <title>Galaxy Bux | Loja Roblox</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@700;800;900&family=Audiowide&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="page-transition-glow" id="page-transition-glow" aria-hidden="true"></div>
+  <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
+  
+
+  <!-- CABEÇALHO / NAVEGAÇÃO -->
+  <header class="topbar">
+  <a href="#inicio" class="logo">
+    <img src="assets/logo horizontal.png" alt="Galaxy Bux">
+  </a>
+
+    <nav class="nav" aria-label="Menu principal">
+      <a class="active" href="#inicio">Início</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#robux">Robux</a>
+      <a href="#gamepasses">Gamepasses</a>
+      <a href="#contas">Contas</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#suporte">Suporte</a>
+    </nav>
+
+    <div class="header-actions">
+      <label class="search">
+        <span class="sr-only">Pesquisar produtos</span>
+        <input id="product-search" type="search" placeholder="Pesquisar produtos..." aria-label="Pesquisar produtos">
+        <span>⌕</span>
+      </label>
+      <button class="icon-button" id="account-button" type="button" aria-label="Minha conta" title="Área de conta em breve">♙</button>
+      <button class="icon-button cart" id="open-cart" type="button" aria-label="Abrir carrinho" aria-controls="cart-panel" aria-expanded="false">🛒<b id="cart-count" aria-live="polite">0</b></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO / DESTAQUE PRINCIPAL -->
+    <section class="hero home-section" id="inicio">
+      <div class="hero-glow glow-a"></div>
+      <div class="hero-sparkles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="hero-glow glow-b"></div>
+      <div class="hero-copy">
+        <p class="eyebrow">GALAXY BUX</p>
+        <h1>ROBLOX EM<br><span>OUTRO NÍVEL</span></h1>
+        <p class="hero-text">Robux, gamepasses, frutas, contas e muito mais.<br>Entrega rápida, segura e com o melhor preço!</p>
+        <div class="hero-buttons">
+          <a class="button primary" href="#catalogo">🛒 VER PRODUTOS</a>
+          <a class="button secondary" href="#como-funciona">◈ COMO FUNCIONA</a>
+        </div>
+        <div class="trust-row">
+          <article><span>⚡</span><div><b>ENTREGA RÁPIDA</b><small>Receba em minutos</small></div></article>
+          <article><span>♢</span><div><b>COMPRA SEGURA</b><small>Seus dados protegidos</small></div></article>
+          <article><span>♧</span><div><b>+ DE 5.000 CLIENTES</b><small>Confiam na Galaxy Bux</small></div></article>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <img class="hero-character" src="assets/personagem.png" alt="" fetchpriority="high">
+        <p class="hero-note">MAIS QUE UMA LOJA,<br>UMA GALÁXIA<br>DE POSSIBILIDADES! ✦</p>
+      </div>
+    </section>
+
+    <!-- JOGOS -->
+    <section class="section home-section" id="jogos">
+      <div class="section-heading"><div><h2>JOGOS</h2><p>Escolha o jogo que você procura</p></div><a href="#todos-jogos" id="all-games-link">Ver todos os jogos →</a></div>
+      <div class="game-grid">
+        <a href="#pagina-jogo" class="game-card" data-game="Blox Fruits"><img src="assets/bf.png" alt="Blox Fruits"><div class="game-info"><strong>BLOX FRUITS</strong><span>→</span></div></a>
+        <a href="#pagina-jogo" class="game-card" data-game="Anime Champions"><img src="assets/ac.png" alt="Anime Champions"><div class="game-info"><strong>ANIME CHAMPIONS</strong><span>→</span></div></a>
+        <a href="#pagina-jogo" class="game-card" data-game="King Legacy"><img src="assets/kl.png" alt="King Legacy"><div class="game-info"><strong>KING LEGACY</strong><span>→</span></div></a>
+        <a href="#pagina-jogo" class="game-card" data-game="Anime Expeditions"><img src="assets/ae.png" alt="Anime Expeditions"><div class="game-info"><strong>ANIME EXPEDITIONS</strong><span>→</span></div></a>
+        <a href="#pagina-jogo" class="game-card" data-game="Anime Astral"><img src="assets/aa.png" alt="Anime Astral"><div class="game-info"><strong>ANIME ASTRAL</strong><span>→</span></div></a>
+        <a href="#pagina-jogo" class="game-card" data-game="Outros Jogos"><img src="assets/oj.png" alt="Outros Jogos"><div class="game-info"><strong>OUTROS JOGOS</strong><span>→</span></div></a>
+      </div>
+
+    </section>
+    <section class="section game-view" id="todos-jogos" hidden>
+      <div class="section-heading"><div><h2>TODOS OS JOGOS</h2><p>Explore todos os jogos adicionados à Galaxy Bux</p></div><a href="#jogos" class="back-to-home">← Voltar</a></div>
+      <div id="all-games-grid" class="game-grid"></div>
+    </section>
+    <section class="section game-view" id="pagina-jogo" hidden>
+      <div class="section-heading"><div><p class="game-view-eyebrow">GALAXY BUX / JOGOS</p><h2 id="game-view-title">JOGO</h2><p id="game-view-subtitle">Produtos disponíveis</p></div><a href="#jogos" class="back-to-home">← Todos os jogos</a></div>
+      <div id="game-products" class="product-grid"></div>
+      <p id="game-empty" class="search-empty" hidden>Em breve teremos produtos deste jogo. Confira os outros jogos disponíveis!</p>
+    </section>
+    <section class="promo section home-section">
+      <div><span>✦</span><h2>OFERTAS DA SEMANA</h2><p>Descontos especiais em Robux, frutas e muito mais!</p></div>
+      <a class="button primary" href="#catalogo">◇ VER OFERTAS</a>
+    </section>
+
+    <!-- CATÁLOGO / PRODUTOS -->
+    <section class="section catalog home-section" id="catalogo">
+      <div class="section-heading">
+        <div><h2>PRODUTOS EM DESTAQUE</h2><p>Os mais comprados da Galaxy Bux</p></div>
+        <a href="#catalogo">Ver todos os produtos →</a>
+      </div>
+
+      <p id="search-empty" class="search-empty" hidden>Nenhum produto encontrado.</p>
+      <div class="product-grid">
+        <article class="product-card" id="robux" data-name="400 Robux" data-image="assets/400 robux.png" data-price="24,90">
+          <div class="product-image image-robux"><img src="assets/400 robux.png" alt="400 Robux"><span class="badge orange">Mais vendido</span></div>
+          <div class="product-info"><h3>400 Robux</h3><small>Robux</small><strong>R$ 24,90</strong><button type="button" class="add-to-cart" aria-label="Adicionar 400 Robux ao carrinho">🛒 COMPRAR</button></div>
+        </article>
+        <article class="product-card" data-name="Blox Fruits - Dragon Fruit" data-image="assets/dragon-bf.png" data-price="69,90">
+          <div class="product-image image-fruit"><img src="assets/dragon-bf.png" alt="Blox Fruits - Dragon Fruit"><span class="badge green">-20%</span></div>
+          <div class="product-info"><h3>Blox Fruits - Dragon Fruit</h3><small>Frutas</small><div class="price"><del>R$ 89,90</del><strong>R$ 69,90</strong></div><button type="button" class="add-to-cart" aria-label="Adicionar Blox Fruits - Dragon Fruit ao carrinho">🛒 COMPRAR</button></div>
+        </article>
+        <article class="product-card" id="gamepasses" data-name="Blox Fruits - 2x Mastery" data-image="assets/2x mastery -bf.png" data-price="49,90">
+          <div class="product-image image-pass"><img src="assets/2x mastery -bf.png" alt="Blox Fruits - 2x Mastery"><span class="badge pink">Popular</span></div>
+          <div class="product-info"><h3>Blox Fruits - 2x Mastery</h3><small>Gamepasses</small><strong>R$ 49,90</strong><button type="button" class="add-to-cart" aria-label="Adicionar Blox Fruits - 2x Mastery ao carrinho">🛒 COMPRAR</button></div>
+        </article>
+        <article class="product-card" id="contas" data-name="Conta Nível Máx." data-image="assets/conta-bf.png" data-price="79,90">
+          <div class="product-image image-account"><img src="assets/conta-bf.png" alt="Conta Nível Máx."><span class="badge purple">Conta Premium</span></div>
+          <div class="product-info"><h3>Conta Nível Máx.</h3><small>Contas</small><strong>R$ 79,90</strong><button type="button" class="add-to-cart" aria-label="Adicionar Conta Nível Máx. ao carrinho">🛒 COMPRAR</button></div>
+        </article>
+        <article class="product-card" data-name="Blox Fruits - Fruit Notifier" data-image="assets/fruit notifier-bf.png" data-price="59,90">
+          <div class="product-image image-notifier"><img src="assets/fruit notifier-bf.png" alt="Blox Fruits - Fruit Notifier"><span class="badge green">-15%</span></div>
+          <div class="product-info"><h3>Blox Fruits - Fruit Notifier</h3><small>Gamepasses</small><div class="price"><del>R$ 69,90</del><strong>R$ 59,90</strong></div><button type="button" class="add-to-cart" aria-label="Adicionar Blox Fruits - Fruit Notifier ao carrinho">🛒 COMPRAR</button></div>
+        </article>
+        <article class="product-card" data-name="Blox Fruits - Dark Blade" data-image="assets/dark blade-bf.png" data-price="39,90">
+          <div class="product-image image-sword"><img src="assets/dark blade-bf.png" alt="Blox Fruits - Dark Blade"><span class="badge pink">Novo</span></div>
+          <div class="product-info"><h3>Blox Fruits - Dark Blade</h3><small>Itens</small><strong>R$ 39,90</strong><button type="button" class="add-to-cart" aria-label="Adicionar Blox Fruits - Dark Blade ao carrinho">🛒 COMPRAR</button></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- BENEFÍCIOS / COMO FUNCIONA -->
+    <section class="section benefits home-section" id="como-funciona">
+      <article><span>◆</span><div><b>FORMAS DE PAGAMENTO</b><small>Pix e outros meios</small></div></article>
+      <article id="suporte"><span>◉</span><div><b>SUPORTE 24/7</b><small>Atendimento via Discord e WhatsApp</small></div></article>
+      <article><span>🚀</span><div><b>ENTREGA IMEDIATA</b><small>Receba seus produtos em minutos</small></div></article>
+      <article><span>♢</span><div><b>COMPRA 100% SEGURA</b><small>Seus dados sempre protegidos</small></div></article>
+    </section>
+
+    <!-- AVALIAÇÕES -->
+    <section class="section reviews home-section" id="avaliacoes">
+      <div class="section-heading"><div><h2>AVALIAÇÕES</h2><p>Espaço pronto para os comentários dos seus clientes.</p></div></div>
+    </section>
+  </main>
+  <div id="cart-overlay" class="cart-overlay" hidden></div>
+  <aside id="cart-panel" class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true" tabindex="-1">
+    <div class="cart-header"><div><small>GALAXY BUX</small><h2 id="cart-title">MEU CARRINHO</h2></div><button id="close-cart" class="cart-close" type="button" aria-label="Fechar carrinho">✕</button></div>
+    <div id="cart-items" class="cart-items" aria-live="polite"></div>
+    <div class="cart-footer"><div class="cart-total"><span>Total</span><strong id="cart-total">R$ 0,00</strong></div><p class="cart-hint">Carrinho demonstrativo. O pagamento ainda não está habilitado.</p><button id="clear-cart" type="button" class="cart-clear">Esvaziar carrinho</button></div>
+  </aside>
+  <div id="site-toast" class="site-toast" role="status" aria-live="polite"></div>
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Voltar ao topo" title="Voltar ao topo">↑</button>
+
+  <!-- RODAPÉ -->
+ <footer>
+    <a class="logo footer-logo" href="#inicio">
+        <img src="assets/logo horizontal.png" alt="Galaxy Bux">
+    </a>
+
+    <p>© 2026 Galaxy Bux. Todos os direitos reservados.</p>
+</footer>
+</body>
+</html>
